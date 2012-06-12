@@ -1,0 +1,961 @@
+@charset "UTF-8"; /* hm-style-for-hatena-diary.css */
+/* HM style for Hatena::Diary <d.hatena.ne.jp>
+ *
+ * Author: MORIYAMA Hiroshi <hiroshi@kvd.biglobe.ne.jp>
+ *
+ * Copyright (c) 2009 MORIYAMA Hiroshi
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+/*
+ * MEMO:
+ *
+ * はてなダイアリーで使用するため次の制限がある。
+ *
+ *   - 子セレクタ ">" を使へない。
+ *
+ *   - "purl" と書くとその行の内容が壊れるので PURL <http://purl.org/>
+ *     は使用できない。<:http://i.hatena.ne.jp/idea/30759> を參照。
+ *
+ *   - はてなダイアリーで使用するときはEUC-JPに變換すること。尚はてなグルー
+ *     プはUTF-8。
+ */
+
+html, body, h1, h2, h3, h4, h5, h6, p, dl, dd, ul, ol, li, pre, blockquote, div,
+a, em, strong, var, kbd, dfn, abbr, acronym, ins, del, span,
+small, big, i, u, s, img {
+  background-color: transparent;
+  color: inherit;
+  border: none;
+  margin: auto;
+  padding: 0;
+  width: auto;
+  height: auto;
+}
+hr {
+  clear: both;
+}
+h1, h2, h3, h4, h5, h6, p, pre {
+  margin: 1em auto;
+}
+html {
+  background-color: #FEFEFA
+}
+body {
+  background-color: transparent;
+  color: black;
+  padding: 0.5em 0 1em 0;
+  width: 95%;
+  line-height: 1.48;
+}
+
+/* Anchors */
+a:link {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: purple;
+  text-decoration: underline;
+}
+a:active {
+  color: green;
+  text-decoration: underline;
+}
+a:focus {
+  text-decoration: underline;
+}
+a[type="application/pdf"]::before,
+a[href$=".pdf"]::before {
+  content: "[PDF] ";
+  font-size: 95%;
+  font-style: italic;
+  color: #0000cd;
+  text-decoration: none;
+}
+a[type="application/rss+xml"]::before,
+a[href$=".rss"]::before,
+a[href$="?rss=2.0"]::before {
+  content: "[RSS] ";
+  font-size: 95%;
+  font-style: italic;
+  color: #0000cd;
+  text-decoration: none;
+}
+
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "VL PGothic", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  color: inherit;
+}
+h1 {
+  font-size: 1em;
+  text-align: right;
+  margin: 0.8em auto;
+  padding: 0;
+  float: right;
+  width: 6em;
+  margin: 0.8em 0 0.8em;
+  height: 1em;
+  color: gray;
+}
+h2 {
+  font-size: 172%;
+}
+h3 {
+  font-size: 160%;
+}
+h4 {
+  font-size: 130%;
+  margin-left: 1em;
+}
+h5 {
+  font-size: 120%;
+  margin-left: 2em;
+}
+h6 {
+  /* undefined */
+}
+
+li h1, li h2, li h3, li h4, li h5, li h6 {
+  margin: 0;
+}
+li h3 {
+  font-size: 130%;
+}
+li h4 {
+  font-size: 115%;
+  font-style: itailc;
+}
+
+/* Paragraph */
+dd p:first-child {
+  margin-top: 0.2em;
+}
+
+/* Definition List */
+dt::after {
+/*
+  display: inline;
+  content: ":";
+*/
+}
+dt {
+}
+dt:first-child,
+dt + dt {
+  margin-top: 0.05em;
+}
+dd {
+  margin-left: 2.5em;
+  margin-bottom: 0.9em;
+}
+
+ul, ol {
+  list-style-position: outside;
+  margin-left: 2.5em;
+}
+
+ol {
+  list-style-type: decimal-leading-zero;
+}
+ol ol {
+  list-style-type: decimal;
+}
+
+pre {
+  background-color: #eee; /* same as CODE */
+  white-space: pre-wrap;
+  line-height: 1.1;
+  margin-left: 0.5em;
+  padding: 0.2em;
+/*  border: solid thin #b0c4de; *//* light steel blue */
+}
+pre + pre {
+  border-top: solid  gray;
+}
+
+/* Quotations */
+blockquote {
+  margin: 1.5em 1.5em 1.5em 1em;
+  border-left: .42em solid #8b8;
+  padding: 0 0 0 .5em;
+}
+blockquote blockquote {
+  margin-right: 0;
+}
+blockquote::after {
+  display: block;
+  content: " ";
+  border-bottom: dotted thin;
+  margin-top: 0.5em;
+  padding-top: 0.1em;
+  text-align: right;
+  font-style: oblique; /* same as CITE */
+  font-size: smaller;
+  display: none ! important; /* Added on 2012-01-26 */
+}
+blockquote blockquote::after {
+  display: none;
+}
+blockquote[cite]::after {
+  content: " \3c" attr(cite) "\3e";
+}
+blockquote[title]::after {
+  content: attr(title);
+}
+
+blockquote, q {
+  color: #006633;
+}
+blockquote blockquote,
+blockquote q,
+q q {
+  color: #00331A;
+}
+
+q { quotes: "“"  "”" }
+q q { quotes: "‘" " ’" }
+q::before {
+  content: open-quote;
+  color: black;
+  font-family: sans-serif;
+}
+q::after {
+  content: close-quote;
+  color: black;
+  font-family: sans-serif;
+}
+code q::before { content: none }
+code q::after { content: none }
+
+em, strong, dfn, cite, code, var, samp, kbd, abbr, acronym {
+  margin: 0 0.1em;
+  padding: 0;
+}
+pre em, pre strong, pre dfn, pre cite, pre code, pre var, pre samp, pre kbd,
+pre abbr, pre acronym {
+  margin: 0;
+  padding: 0;
+}
+var, cite {
+  font-style: oblique;
+}
+em {
+  font-style: normal;
+  border-bottom: thin solid red ! important;
+  font-family: sans-serif;
+}
+em[title="引用者註"],
+em[title="引用者注"], {
+  font-size: small;
+  border-bottom: none ! important;
+}
+strong {
+  font-style: normal;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+/*
+Removed on 2011-11-04
+strong strong {
+  color: red;
+  font-size: 110%;
+}
+*/
+dfn, dt {
+  font-style: normal;
+  font-family: sans-serif;
+}
+code, samp, kbd,
+code *, samp *, kbd * {
+  font-family: monospace;
+}
+code {
+  background-color: #eee; /* same as PRE */
+}
+kbd code {
+  background-color: transparent;
+}
+pre code {
+  background-color: transparent;
+  margin: 0;
+}
+kbd code,  kbd samp,  kbd kbd,
+code code, code samp, code kbd,
+samp code, samp samp, samp kbd  {
+  margin: 0;
+}
+samp {
+  /* background-color: #ddffff;*/
+  background-color: transparent;
+}
+pre samp {
+  background-color: transparent;
+}
+kbd {
+  background-color: #ffeebb;
+}
+pre kbd {
+}
+kbd.key {
+}
+kbd.input {
+}
+pre kbd::before, pre kbd::after,
+code kbd::before, code kbd::after,
+var kbd::before, var kbd::after {
+  quotes: "" "";
+}
+pre kbd::before, pre kbd::after,
+code kbd::before, code kbd::after,
+var kbd::before, var kbd::after {
+  quotes: "" "";
+}
+/* "設定(N)" の "N" など、メニューアイテムのアクセスキーを表現する。
+ */
+kbd.accesskey {
+  text-decoration: underline;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+}
+abbr[title], acronym[title] {
+  border-bottom: thin dotted;
+}
+abbr {
+}
+acronym {
+  text-transform: uppercase;
+}
+
+ins {
+  text-decoration: none;
+/*   border: solid thin; */
+/*   padding: 0 0.2em; */
+  color: maroon;
+}
+del {
+  text-decoration: line-through;
+  color: gray;
+}
+ins del {
+  color: gray;
+}
+
+/* Font style elements */
+small {
+  font-size: smaller;
+}
+big {
+  font-size: larger;
+}
+i {
+  font-style: italic;
+}
+b {
+  font-weight: bold;
+}
+
+/* Table */
+table {
+  border-collapse: collapse;
+}
+caption {
+  font-size: smaller;
+  white-space: nowrap;
+}
+
+thead {
+  background-color: #dfdfdf;
+}
+th, td {
+  border: solid thin #dfdfdf;
+}
+
+th {
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+th[scope="row"] {
+  text-align: left;
+  padding-left: 0.2em;
+}
+
+tbody,
+tbody + tbody + tbody,
+tbody + tbody + tbody + tbody + tbody {
+  background-color: #f0f0fa;
+}
+tbody + tbody,
+tbody + tbody + tbody + tbody,
+tbody + tbody + tbody + tbody + tbody + tbody {
+  background-color: #f0faf0;
+}
+
+
+/* ::::: Hatena Diary ::::: */
+
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.hatena-body {
+  width: 97%;
+  margin: 0 auto;
+  padding: 0 0 1em 0;
+}
+
+.hatena-body p:empty {
+  display: none;
+}
+
+.hatena-body h2 {
+  font-size: 180%;
+  margin: 1em auto;
+  text-align: center;
+}
+
+.hatena-body .section h3.title {
+  font-size: 150%;
+  margin-top: 0;
+}
+
+/* Link in heading (permalink) */
+.hatena-body h1 a:link,
+.hatena-body h2 a:link,
+.hatena-body h3 a:link,
+.hatena-body h1 a:visited,
+.hatena-body h2 a:visited,
+.hatena-body h3 a:visited {
+  color: inherit ! important;
+  text-decoration: none ! important;
+}
+.hatena-body h1 a:link:hover, .hatena-body h1 a:visited:hover,
+.hatena-body h2 a:link:hover, .hatena-body h2 a:visited:hover,
+.hatena-body h3 a:link:hover, .hatena-body h3 a:visited:hover {
+  text-decoration: underline ! important;
+}
+.hatena-body h1 a:link:hover,
+.hatena-body h2 a:link:hover,
+.hatena-body h3 a:link:hover {
+  color: blue ! important;
+}
+.hatena-body h1 a:visited:hover,
+.hatena-body h2 a:visited:hover,
+.hatena-body h3 a:visited:hover {
+  color: purple ! important;
+}
+
+/* Category link(s) */
+.hatena-body p.sectionheader,
+.hatena-body p.sectionheader * {
+  font-size: inherit ! important;
+}
+.hatena-body p.sectionheader {
+  text-align: right;
+  margin-top: -1em;
+}
+.hatena-body p.sectionheader::before {
+  display: inline;
+  content: "カテゴリ: ";
+}
+.hatena-body p.sectionheader:empty::after {
+  display: inline;
+  content: "未分類";
+}
+
+/* Footer */
+.hatena-body p.sectionfooter {
+  display: none;
+}
+.hatena-body p.sectionfooter a:link::after {
+  display: inline;
+  content: " - http://d.hatena.ne.jp" attr(href);
+}
+
+/* Next and Prev links */
+.hatena-body #pager-top {
+  display: none;
+}
+
+.hatena-body blockquote[title][cite]::after {
+  display: none ! important;
+}
+/* はてなダイアリーによる引用元表示(CITE要素) */
+.hatena-body blockquote[cite] p + cite,
+.hatena-body blockquote[cite] ul + cite,
+.hatena-body blockquote[cite] ol + cite,
+.hatena-body blockquote[cite] dl + cite,
+.hatena-body blockquote[cite] blockquote + cite,
+.hatena-body blockquote[cite] pre + cite,
+.hatena-body blockquote[cite] div + cite,
+.hatena-body blockquote[cite] form + cite {
+  display: block;
+  border-bottom: dotted thin;
+  padding-top: 0.1em;
+  text-align: right;
+  font-size: smaller;
+  display: none; /* Added on 2012-01-20 */
+}
+/* 入籠のBLOCKQUOTEに插入されたCITE要素は表示しない */
+.hatena-body blockquote blockquote[cite] p + cite,
+.hatena-body blockquote blockquote[cite] ul + cite,
+.hatena-body blockquote blockquote[cite] ol + cite,
+.hatena-body blockquote blockquote[cite] dl + cite,
+.hatena-body blockquote blockquote[cite] blockquote + cite,
+.hatena-body blockquote blockquote[cite] pre + cite,
+.hatena-body blockquote blockquote[cite] div + cite,
+.hatena-body blockquote blockquote[cite] form + cite {
+  display: none;
+}
+.hatena-body blockquote[cite] p + cite a[href],
+.hatena-body blockquote[cite] ul + cite a[href],
+.hatena-body blockquote[cite] ol + cite a[href],
+.hatena-body blockquote[cite] dl + cite a[href],
+.hatena-body blockquote[cite] blockquote + cite a[href],
+.hatena-body blockquote[cite] pre + cite a[href],
+.hatena-body blockquote[cite] div + cite a[href],
+.hatena-body blockquote[cite] form + cite a[href] {
+  text-decoration: none;
+}
+.hatena-body blockquote[cite] p + cite a:hover,
+.hatena-body blockquote[cite] ul + cite a:hover,
+.hatena-body blockquote[cite] ol + cite a:hover,
+.hatena-body blockquote[cite] dl + cite a:hover,
+.hatena-body blockquote[cite] blockquote + cite a:hover,
+.hatena-body blockquote[cite] pre + cite a:hover,
+.hatena-body blockquote[cite] div + cite a:hover,
+.hatena-body blockquote[cite] form + cite a:hover {
+  text-decoration: underline;
+}
+
+.hatena-body q cite:last-child,
+.hatena-body blockquote[title="*"][cite] p + cite,
+.hatena-body blockquote[title="*"][cite] ul + cite,
+.hatena-body blockquote[title="*"][cite] ol + cite,
+.hatena-body blockquote[title="*"][cite] dl + cite,
+.hatena-body blockquote[title="*"][cite] blockquote + cite,
+.hatena-body blockquote[title="*"][cite] div + cite,
+.hatena-body blockquote[title="*"][cite] form + cite {
+  display: none;
+}
+.hatena-body blockquote[title="*"][cite]::after {
+  display: block ! important;
+  content: "" attr(cite) "" ! important;
+  border-top: solid thin ! important;
+  padding-top: 0.1em ! important;
+  text-align: right ! important;
+  font-style: oblique ! important; /* same as CITE */
+}
+
+/* Section */
+.hatena-body .section {
+  margin-bottom: 1em;
+}
+
+/* "細いヘッダ" */
+/*
+#simple-header {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  background-color: transparent ! important;
+}
+#simple-header * {
+  display: inline ! important;
+  margin: 0 ! important;
+  padding: 0 ! important;
+  white-space: normal ! important;
+  position: static ! important;
+}
+#simple-header ul, #simple-header li {
+  background-color: transparent ! important;
+  color: inherit ! important;
+}
+#simple-header a {
+  color: blue ! important;
+  white-space: nowrap ! important;
+}
+#simple-header a:visited {
+  color: purple ! important;
+}
+#simple-header a:hover {
+  text-decoration: underline ! important;
+}
+#simple-header input, #simple-header button {
+}
+*/
+#simple-header input[type="text"] {
+  width: 12em ! important;
+}
+
+/* "この日記について" <URL:http://d.hatena.ne.jp/mhrs/about> */
+#hatena-about h2 span.title::before {
+/*
+  display: inline;
+  content: "id:";
+*/
+}
+
+/* "記事一覧" <URL:http://d.hatena.ne.jp/mhrs/archive> */
+#archive-calendar-top {
+  display: none;
+}
+
+/* 「編集」リンク(管理者用) */
+/* 右寄せ */
+.hatena-body h2 a.edit {
+  position: absolute;
+  top: auto;
+  right: 0.5em;
+  font-weight: normal;
+}
+/* "編集" → "編輯" */
+.hatena-body h2 a.edit {
+  visibility: hidden ! important;
+}
+.hatena-body h2 a.edit::after {
+  visibility: visible ! important;
+  display: inline ! important;
+  content: "編輯" ! important;
+}
+
+/* "はてなスター" と「日附リンク」との距離を離す。
+ * 近いと間違へて "Add Star" しさうなので
+ */
+.hatena-body h2 a[href] {
+  margin-right: 2em;
+}
+.hatena-body h2 span a[href] {
+  margin-right: 0;
+}
+
+/* Hatena Star */
+.hatena-body h2 .hatena-star-comment-container img,
+.hatena-body h2 .hatena-star-star-container img {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+
+/* :::::  Emacs font-lock faces ::::: */
+
+/* font-lock faces */
+code.builtin, code .builtin { /* font-lock-builtin-face */  color: #7a378b }
+code.comment, code .comment { /* font-lock-comment-face */ color: #b22222 }
+code.comment-delimiter, code .comment-delimiter { /* font-lock-comment-delimiter-face */ color: #b22222 }
+code.constant, code .constant { /* font-lock-constant-face */ color: #008b8b }
+code.doc, code .doc { /* font-lock-doc-face */ color: #8b2252 }
+code.function-name, code .function-name { /* font-lock-function-name-face */ color: #0000ff }
+code.keyword, code .keyword { /* font-lock-keyword-face */ color: #a020f0 }
+code.regexp-grouping-backslash, code .regexp-grouping-backslash { /* font-lock-regexp-grouping-backslash */ font-weight: bold }
+code.regexp-grouping-construct, code .regexp-grouping-construct { /* font-lock-regexp-grouping-construct */ font-weight: bold }
+code.string, code .string { /* font-lock-string-face */ color: #8b2252 }
+code.type, code .type { /* font-lock-type-face */ color: #228b22 }
+code.variable-name, code .variable-name { /* font-lock-variable-name-face */ color: #a0522d }
+code.warning, code .warning { /* font-lock-warning-face */ color: #ff0000; font-weight: bold }
+/* sh-mode faces */
+code.sh-heredoc, code .sh-heredoc { /* sh-heredoc */ color: #8b2252 }
+code.sh-quoted-exec, code .sh-quoted-exec { /* sh-quoted-exec */ color: #ff00ff /* magenta */ }
+/* My definition faces */
+code.my-ends-here-comment, code .my-ends-here-comment { /* my-ends-here-comment-face */ color: #b22222; font-weight: bold; }
+code.my-heading-level-3, code .my-heading-level-3 { /* my-heading-level-3-face */ color: #228b22 /* forest green */; font-size: 150%; font-weight: bold; }
+code.my-heading-level-4, code .my-heading-level-4 { /* my-heading-level-4-face */ color: #006400; font-size: 120%; font-weight: bold; }
+code.my-paren, code .my-paren   { /* my-paren-face   for "()" */ color: #777 }
+code.my-paren, code .my-brace   { /* my-brace-face   for "{}" */ color: #777 }
+code.my-paren, code .my-bracket { /* my-bracket-face for "[]" */ color: #777 }
+
+
+/* ::::: Micro Web Diary on Hatena Diary ::::: */
+
+h1, h2, h3, h4, h5, h6 {
+  color: #423F53; /* はてなのヘッダ(紫)の フォーム部品の border-color から。 */
+}
+h1 {
+  display: none ! important;
+}
+h2 {
+  text-align: left ! important;
+  font-size: 130% ! important;
+}
+h3 {
+  margin: 0.8em 0 0.2em 0;
+}
+.hatena-body .day + .day {
+  margin-bottom: 2.5em;
+}
+.hatena-body .day + .day h2 {
+/*  border-top: thin solid gray;*//*obsolete, 2012-05-13*/
+  padding-top: 1em;
+}
+h2 a[href^="http://d.hatena.ne.jp/"]::before {
+  display: inline;
+  content: "# ";
+}
+ol li dl dt {
+  margin-left: 1em;
+  margin-left: 0;
+}
+ol li dl dl dt {
+  display: inline;
+  font-size: inherit;
+  margin-left: 0;
+}
+ol li dd {
+  margin-left: 2em ! important;
+  margin-bottom: 0;
+}
+ol li dd + dd {
+  margin-top: 0.3em;
+}
+ol li dl[title]::before {
+  display: block;
+  content: attr(title);
+  text-align: right;
+  margin-top: 0.5em;
+  background-color: transparent;
+  color: #333;
+}
+ol li dl + dl {
+  display: block;
+  border-top: solid medium #eee;
+}
+
+ol li {
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+ol li p {
+  text-indent: 0;
+  margin: 0.28em 0;
+}
+
+ol li pre {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  line-height: 1.0;
+}
+ol li code {
+  display: inline-box;
+  line-height: 1.0; /* same as PRE */
+  padding: 0.2em; /* same as PRE */
+}
+ol li pre code {
+  line-height: inherit;
+  padding: 0;
+}
+
+ol li blockquote {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+ol li blockquote + blockquote {
+}
+/* blockquoteの引用元表示を浮動させる。 */
+ol li blockquote::after,
+.hatena-body ol li blockquote[cite] p + cite,
+.hatena-body ol li blockquote[cite] ul + cite,
+.hatena-body ol li blockquote[cite] ol + cite,
+.hatena-body ol li blockquote[cite] dl + cite,
+.hatena-body ol li blockquote[cite] blockquote + cite,
+.hatena-body ol li blockquote[cite] pre + cite,
+.hatena-body ol li blockquote[cite] div + cite,
+.hatena-body ol li blockquote[cite] form + cite {
+  float: right;
+  width: auto;
+  margin: -0.1em 0 0.4em 0.5em;
+  padding: 0;
+}
+/* blockquoteの引用元表示のfloatに對するclear。*/
+ol li blockquote + *,
+ul li blockquote + * { clear: none }
+/* ol li, ul li { clear: right }
+*/
+
+ol li :first-child {
+  margin-top: .3em;
+  padding-top: 0;
+}
+
+ol li :last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+ol li hr {
+  display: block;
+  border: none;
+  background-color: #cccccc;
+  padding: 0;
+  height: 0.1em;
+  margin: 0.9em 0 0.5em ! important;
+}
+
+
+/* ::::: Other classes ::::: */
+
+/* Banners */
+dt a[href="http://gean.cc/vs/kid/"]::before,
+dt a[href="http://gean.cc/vs/kid/index.html"]::before  {
+  display: inline;
+  content: url(http://img.f.hatena.ne.jp/images/fotolife/m/mhrs/20090117/20090117073854.png);
+}
+
+/* カーソル位置を視覚的に表すための文字であることを表現するクラス(.cursor)。
+ * またはその文字にカーソルが乘つてゐることを表現するクラス(.under-cursor)。
+ * - .cursor初出: 2011-07-12の日記 http://d.hatena.ne.jp/mhrs/20110712
+ * - .under-cursor初出: なし。
+ */
+em.cursor,
+em.under-cursor {
+  background-color: green;
+  color: green;
+  text-decoration: none;
+  border: none ! important;
+}
+em.under-cursor {
+  color: white;
+}
+
+/* Unicode Character Name
+ */
+.unicode-character-name {
+  text-transform: uppercase;
+}
+
+
+/* ::::: Experimental ::::: */
+
+/* 大文字化 */
+code.cl,
+span.cl,
+code.sgml,
+span.sgml,
+code.html,
+span.html,
+.cl-name, /* obsolate */
+.sgml-name /* obsolate */ {
+  text-transform: uppercase;
+}
+
+/* 振假名。
+ * 初出: "2011-10-02 - HM stream" <URL:http://d.hatena.ne.jp/mhrs/20111002>
+ */
+.with-furigana[title]::after {
+  content: "(" attr(title) ")";
+  font-size: 80%;
+}
+
+
+ol li .floatable {
+  float: right;
+  clear: right;
+  width: auto;
+}
+ol li .with-caption[title] {
+  display: table;
+  margin: 0 0 .2em .5em;
+  padding: 0;
+}
+ol li .with-caption[title] img {
+  border: solid thin gray;
+  display: table-cell;
+}
+ol li .with-caption[title]::after {
+  display: table-caption;
+  margin: 0;
+  padding: 0;
+  caption-side: bottom;
+  content: attr(title);
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 80%;
+}
+
+/* Retweet Style. Added on 2011-11-11 */
+/*
+li q:first-child[cite^="http://twitter.com/"][cite*="/status/"]::before,
+li q:first-child[cite^="https://twitter.com/"][cite*="/status/"]::before {
+  content: "RT " open-quote;
+  font-family: sans-serif;
+  color: black;
+}
+li q:first-child[cite^="http://twitter.com/"][cite*="/status/"]::after,
+li q:first-child[cite^="https://twitter.com/"][cite*="/status/"]::after {
+  color: black;
+}
+blockquote q[cite^="http://twitter.com/"][cite*="/status/"]::before,
+q q[cite^="http://twitter.com/"][cite*="/status/"]::before {
+  content: open-quote;
+}
+*/
+
+kbd code,  kbd samp,  kbd kbd,
+code code, code samp, code kbd,
+samp code, samp samp, samp kbd  {
+  margin: 0;
+}
+
+
+img[alt*="スクリーンショット"] {
+  border: dotted thin #006400 /* dark green */;
+}
+
+dl.interview dt { display: run-in; font-weight: bold }
+dl.interview dt::after { content: ": " }
+
+.document-footer address {
+  text-align: right;
+}
+
+/* 2012-05-15 */
+/* フォントいぢり。もちろんこれが適用されなくても意味がとほるテキストに
+ * しておくこと。
+ */
+.pseudo-deleted {
+  text-decoration: line-through;
+}
+
+/* 2012-05-15 */
+ins.fixed-typo, del.fixed-typo,
+del[title="誤字修正"],
+del[title="誤字訂正"],
+ins[title="誤字修正"],
+ins[title="誤字訂正"],
+ins[title="脱字修正"],
+ins[title="脱字訂正"] {
+  color: inherit;
+  background-color: transparent;
+  text-decoration: inherit;
+  border: inherit;
+}
+
+/* hm-style-for-hatena-diary.css ends hear. */

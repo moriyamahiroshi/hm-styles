@@ -1,0 +1,9 @@
+2012-06-12  MORIYAMA Hiroshi  <hiroshi@kvd.biglobe.ne.jp>
+
+	* hm-style-for-hatena-diary.css, hm-style-for-hatena-antenna.css:
+	Published on GitHub. licensed by MIT license.
+
+	hatena.ne.jp 上で2009年頃から使用・公開してゐたスタイルシートを
+	GitHub上に置いた。MIT licenseを附與。
+
+	* ChangeLog, MIT, README: new files.

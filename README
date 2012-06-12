@@ -1,0 +1,24 @@
+*HM styles -*- mode: outline; coding: utf-8 -*-
+
+** About
+
+CSSのスタイルシートファイル。いまのところはてなダイアリー用とはてなアンテ
+ナ用のみ。<http://d.hatena.ne.jp/mhrs/> と <http://a.hatena.ne.jp/mhrs/>
+でそれぞれ使用してゐる。
+
+** TODO
+
+*** CSSTidyを使つて壓縮するコマンドみたいなもの
+*** はてなダイアリー・はてなアンテナに置いたスタイルシートを更新するコマンドとか
+
+** COPYRIGHT
+
+© 2009 MORIYAMA Hiroshi
+
+** LICENSE
+
+The MIT license.
+
+** AUTHOR
+
+MORIYAMA Hiroshi (Twitter ID: @moriyama164) <hiroshi@kvd.biglobe.ne.jp>

@@ -1,0 +1,712 @@
+@charset "UTF-8"; /* hm-style-for-hatena-antenna.css */
+/* HM style for Hatena::Antenna <a.hatena.ne.jp>
+ *
+ * Author: MORIYAMA Hiroshi (@moriyama164, hatena:id:mhrs) <hiroshi@kvd.biglobe.ne.jp>
+ *
+ * Copyright (c) 2009 MORIYAMA Hiroshi
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+html, body {
+  background-color: #f8f8f8;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  line-height: 1.3 ! important;
+}
+
+a:link {
+  color: blue;
+  background-color: transparent;
+}
+
+a:visited {
+  color: purple;
+  background-color: transparent;
+}
+
+a:active {
+  color: green;
+  background-color: transparent;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  display: block;
+  font: bold normal normal 1.1em/100% sans-serif;
+  background: transparent;
+  color: #423F53; /* はてなのヘッダ内の フォーム部品の border-color から。 */
+  border: none;
+}
+
+h1 {
+  display: none;
+}
+
+h2 {
+  font-size: 170%;
+  margin: 1em 0 1em 1%;
+}
+
+h2:first-child {
+  margin-top: 0.5em;
+}
+
+ol {
+  margin: 1em 0;
+}
+
+ol li {
+}
+
+p.diff {
+  max-height: 5.2em ! important; /* 1.3 (line-height) × 4 = 4 lines */
+  overflow: hidden ! important;
+  margin: 0.5em 0 1em 1em;
+}
+
+hr {
+  margin: 0.2em 1%;
+}
+
+img {
+  vertical-align: middle ! important;
+}
+
+
+a[href^="/include?"],
+a[href^="/map?"],
+a[href^="./editpage?"] {
+  margin: 0 0 0 .3em;
+}
+
+img[alt="含むアンテナ"] {
+  width: .8em ! important;
+  height: .8em ! important;
+}
+
+img[alt="おとなりページ"] {
+  width: 1.6em ! important;
+  height: .8em ! important;
+}
+
+img[alt="編集"] {
+  width: .8em ! important;
+  height: .8em ! important;
+}
+
+
+#pager_group,
+.pager {
+  margin: .5em 0 0 1% ! important;
+}
+#pager_top,     /* "1 2 3 次の50件" */
+#pager_relate { /* "おとなりアンテナ | おすすめページ" */
+  display: inline-block;
+  margin: .5em 0 0 1% ! important;
+  padding: 0;
+}
+
+#simple-header {
+}
+
+#simple-header input.search-word {
+  width: 12em;
+}
+
+/* ::::: [PR] links ::::: */
+
+ol[style="list-style-type: none;"] {
+  font-size: 96%;
+  margin: .8em 0 0 1%; /* 他のリンクと近すぎると押し間違へさうなので上下を少し離す。 */
+  padding: 0;
+}
+
+ol[style="list-style-type: none;"] li {
+  display: inline;
+}
+
+/* :::: For administrator :::: */
+
+.adminmenu {
+  text-align: right;
+  font-size: 98%;
+}
+
+.adminmenu a {
+  white-space: nowrap;
+}
+
+/* ::::: Detail mode ::::: */
+
+/* e.g. "http://d.hatena.ne.jp/mhrs/detail" (for admin only) */
+
+[id="hatena-antenna-detail"] p.diff {
+  overflow: visible ! important;
+  height: auto ! important;
+  max-height: none ! important;
+}
+
+/* ::::: Banners ::::: */
+
+/* シンプルモード http://a.hatena.ne.jp/mhrs/simple
+ * 及び画像モード http://a.hatena.ne.jp/mhrs/image ではバナーを表示しない。
+ */
+[id="hatena-antenna-simple"] a::after,
+[id="hatena-antenna-image"] a::after {
+  content: "" ! important;
+}
+
+/* "正かな同人誌制作委員會(假稱)"
+ * http://kan-chan.stbbs.net/dojin/seikana_dojin.html
+ * http://kan-chan.stbbs.net/dojin/b13a_banner.png
+ */
+a[href^="http://a.st-hatena.com/go?http://kan-chan.stbbs.net/dojin/seikana_dojin.html"]::after,
+a[href^="http://kan-chan.stbbs.net/dojin/seikana_dojin.html"]::after {
+  content: url(http://cdn-ak.f.st-hatena.com/images/fotolife/m/mhrs/20111103/20111103080350.png);
+}
+
+/* "紙捻"
+ * http://koyori.org/
+ * http://koyori.org/banner
+ */
+a[href^="http://a.st-hatena.com/go?http://koyori.org/"]::after,
+a[href^="http://koyori.org/"]::after {
+  content: url("http://cdn-ak.f.st-hatena.com/images/fotolife/m/mhrs/20111105/20111105080649.png");
+}
+
+/* "闇黒日記"
+ * http://members.jcom.home.ne.jp/w3c/omake/diary.html
+ * http://members.jcom.home.ne.jp/w3c/omake/Misha.png
+ */
+a[href^="http://a.st-hatena.com/go?http://members.jcom.home.ne.jp/w3c/omake/diary.html"]::after,
+a[href^="http://members.jcom.home.ne.jp/w3c/omake/diary.html"]::after {
+  content: url("http://cdn-ak.f.st-hatena.com/images/fotolife/m/mhrs/20111105/20111105080650.png");
+}
+
+/* "猫と正かなづかひの同人誌" バナー1
+ * http://members.jcom.home.ne.jp/w3c/omake/Nekobon01.html
+ * http://members.jcom.home.ne.jp/w3c/omake/nekobonbana.jpg
+ */
+a[href^="http://a.st-hatena.com/go?http://members.jcom.home.ne.jp/w3c/omake/Nekobon01.html"]::after,
+a[href^="http://members.jcom.home.ne.jp/w3c/omake/Nekobon01.html"]::after {
+  content: url("http://cdn-ak.f.st-hatena.com/images/fotolife/m/mhrs/20111119/20111119192032.jpg");
+}
+
+/* "月夜丘 ～つくよのをか～"
+ * http://llluna.s1.hayasoft.com/
+ * http://llluna.s1.hayasoft.com/about.html#LINK
+ * http://llluna.s1.hayasoft.com/img/banner/banner.png
+ */
+a[href^="http://a.st-hatena.com/go?http://llluna.s1.hayasoft.com/"]::after,
+a[href^="http://llluna.s1.hayasoft.com/"]::after {
+  content: url("http://cdn-ak.f.st-hatena.com/images/fotolife/m/mhrs/20111127/20111127195117.png");
+}
+
+/* ::::: Favicons ::::: */
+
+#hatena-antenna-simple a[href]::before {
+  display: inline;
+  margin: 0 .25em 0 0;
+  vertical-align: middle;
+ /*
+  * Default icon for text file.
+  *
+  * Original: Tango Theme Icons (Public Domain)
+  *
+  * "Generic, Template, Text, X icon | Icon Search Engine"
+  * http://www.iconfinder.com/icondetails/15419/16/generic_template_text_x_icon
+  */
+/*
+  content: url("data:image/png;base64,\
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3R\
+JTUUH1QQWFA84umAmQgAAAEVQTFRFAAAAgYGBlZWVmZmZlZWVgYGBxMTExcXFxsbGx8fHyMjI6urq6+\
+vr7Ozs7e3l7e3m7e3t7u7u7+/v8PDw8fHx8vLy////VC0L/wAAAAV0Uk5TAFaorLQ12N5nAAAAAWJLR\
+0QWfNGoGQAAAGVJREFUGBkFwUEOgzAQBDAPuyDg1v8/ssdWShpqpzYAzEdvLwC8h+azhKgqNGtEMG9o\
+HEIJaDKCITc09ijradCYjKsW0GQvkQIaY4hwQeOMSICmvhFugcaZCAHNAQDSAcBvAQDwBz91FYNvSPJ\
+dAAAAAElFTkSuQmCC");
+*/
+/*
+  content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH1QQWFA84umAmQgAAAEVQTFRFAAAAgYGBlZWVmZmZlZWVgYGBxMTExcXFxsbGx8fHyMjI6urq6+vr7Ozs7e3l7e3m7e3t7u7u7+/v8PDw8fHx8vLy////VC0L/wAAAAV0Uk5TAFaorLQ12N5nAAAAAWJLR0QWfNGoGQAAAGVJREFUGBkFwUEOgzAQBDAPuyDg1v8/ssdWShpqpzYAzEdvLwC8h+azhKgqNGtEMG9oHEIJaDKCITc09ijradCYjKsW0GQvkQIaY4hwQeOMSICmvhFugcaZCAHNAQDSAcBvAQDwBz91FYNvSPJdAAAAAElFTkSuQmCC");
+*/
+
+  content: url("http://cdn-ak.f.st-hatena.com/images/fotolife/m/mhrs/20111128/20111128181150.png");
+}
+
+/* はてなダイアリー (標準(青))
+ */
+#hatena-antenna-simple a[href*="http://d.hatena.ne.jp/ziom/"]::before,
+#hatena-antenna-simple a[href*="http://d.hatena.ne.jp/Sucky/"]::before {
+  content: url("http://d.hatena.ne.jp/images/de_favicon.ico");
+}
+
+/* はてなダイアリー (グレー)
+ */
+#hatena-antenna-simple a[href*="http://d.hatena.ne.jp/KnightLiberty/"]::before,
+#hatena-antenna-simple a[href*="http://d.hatena.ne.jp/Mobnoboka/"]::before {
+  content: url("http://d.hatena.ne.jp/images/dg_favicon.ico");
+}
+
+/* はてなダイアリー (緑)
+ */
+#hatena-antenna-simple a[href*="http://d.hatena.ne.jp/yms-zun/"]::before {
+  content: url("http://d.hatena.ne.jp/images/gr_favicon.ico");
+}
+
+/* はてなダイアリー (紫)
+ */
+#hatena-antenna-simple a[href*="http://d.hatena.ne.jp/mhrs/"]::before {
+  content: url("http://d.hatena.ne.jp/images/pr_favicon.ico");
+}
+
+/* はてなダイアリー (セピア)
+ */
+#hatena-antenna-simple a[href*="http://www.takamagahara.info/notebook/latest.htm"]::before, /* 雑念雑記はてな出張所 */
+#hatena-antenna-simple a[href*="http://d.hatena.ne.jp/amateru/"]::before                    /* 〃 */ {
+  content: url("http://d.hatena.ne.jp/images/sp_favicon.ico");
+}
+
+/* はてなダイアリー (ピンク)
+ */
+#hatena-antenna-simple a[href*="http://d.hatena.ne.jp/twoineko/"]::before {
+  content: url("http://d.hatena.ne.jp/images/pk_favicon.ico");
+}
+
+/* はてなダイアリー (抹茶)
+ */
+#hatena-antenna-simple a[href*="http://d.hatena.ne.jp/kim_upsilon/"]::before,
+#hatena-antenna-simple a[href*="http://d.hatena.ne.jp/nnh/"]::before {
+  content: url("http://d.hatena.ne.jp/images/te_favicon.ico");
+}
+
+/* はてなダイアリー (ライトブルー)
+ */
+#hatena-antenna-simple a[href*="http://d.hatena.ne.jp/meigara/"]::before,
+#hatena-antenna-simple a[href*="http://d.hatena.ne.jp/garyoh/"]::before {
+  content: url("http://d.hatena.ne.jp/images/lb_favicon.ico");
+}
+
+/* はてなダイアリー (白)
+ */
+#hatena-antenna-simple a[href*="http://d.hatena.ne.jp/funaki_naoto/"]::before,
+#hatena-antenna-simple a[href*="http://d.hatena.ne.jp/katouk/"]::before,
+#hatena-antenna-simple a[href*="http://d.hatena.ne.jp/kahusi/"]::before,
+#hatena-antenna-simple a[href*="http://d.hatena.ne.jp/Choloepus/"]::before,
+#hatena-antenna-simple a[href*="http://d.hatena.ne.jp/Coold/"]::before,
+#hatena-antenna-simple a[href*="http://d.hatena.ne.jp/tinuyama/"]::before,
+#hatena-antenna-simple a[href*="http://d.hatena.ne.jp/nkky/"]::before,
+#hatena-antenna-simple a[href*="http://d.hatena.ne.jp/kokugokyo/"]::before {
+  content: url("http://d.hatena.ne.jp/images/wh_favicon.ico");
+}
+
+/* はてなダイアリー (オレンジ)
+ */
+#hatena-antenna-simple a[href*="http://d.hatena.ne.jp/eulear/"]::before {
+  content: url("http://d.hatena.ne.jp/images/or_favicon.ico");
+}
+
+/* はてなグループ (標準(青))
+ */
+#hatena-antenna-simple a[href*="http://seijiseikana.g.hatena.ne.jp/nnh/"]::before,
+#hatena-antenna-simple a[href*="http://seijiseikana.g.hatena.ne.jp/saitohswebpage/"]::before,
+#hatena-antenna-simple a[href*="http://seijiseikana.g.hatena.ne.jp/kahusi/"]::before {
+  content: url("http://g.hatena.ne.jp/images/de_favicon.ico");
+}
+
+/* はてなグループ (紫)
+ */
+#hatena-antenna-simple a[href*="http://seijiseikana.g.hatena.ne.jp/ziom/"]::before {
+  content: url("http://g.hatena.ne.jp/images/pr_favicon.ico");
+}
+
+/* はてなグループ (抹茶)
+ */
+#hatena-antenna-simple a[href*="http://wikipedia.g.hatena.ne.jp/nnh/"]::before,
+#hatena-antenna-simple a[href*="http://seijiseikana.g.hatena.ne.jp/Akimbo/"]::before {
+  content: url("http://g.hatena.ne.jp/images/te_favicon.ico");
+}
+
+/* はてなグループ (白)
+ */
+#hatena-antenna-simple a[href*="http://seijiseikana.g.hatena.ne.jp/funaki_naoto/"]::before {
+  content: url("http://g.hatena.ne.jp/images/wh_favicon.ico");
+}
+
+/* はてなブログ
+ */
+#hatena-antenna-simple a[href*="http://osito.hatenablog.jp/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fhatenablog.com%2F");
+}
+
+/* Blogspot
+ */
+#hatena-antenna-simple a[href*=".blogspot.com/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fblogspot.com%2F");
+}
+
+/* FC2ブログ
+ */
+#hatena-antenna-simple a[href*=".fc2.com/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Ffc2.com%2F");
+}
+/* FC2 Web
+ */
+#hatena-antenna-simple a[href*=".web.fc2.com/"]::before {
+  content: url("http://cdn-ak.f.st-hatena.com/images/fotolife/m/mhrs/20111128/20111128181150.png");
+}
+
+/* エキサイトブログ
+ */
+#hatena-antenna-simple a[href*=".exblog.jp/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fexblog.jp%2F");
+}
+
+/* Yahoo!ブログ
+ */
+#hatena-antenna-simple a[href*=".yahoo.co.jp/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fblog.yahoo.co.jp%2F");
+}
+
+/* アメブロ
+ */
+#hatena-antenna-simple a[href*="http://ameblo.jp/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fameblo.jp%2F");
+}
+
+/* livedoor Blog
+ */
+#hatena-antenna-simple a[href*="http://blog.livedoor.jp/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fblog.livedoor.jp%2F");
+}
+
+/* goo ブログ
+ */
+#hatena-antenna-simple a[href*="http://blog.goo.ne.jp/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fblog.goo.ne.jp%2F");
+}
+
+/* ぷららのブログ　Broach（ブローチ）
+ * http://pub.ne.jp/favicon.ico
+ */
+#hatena-antenna-simple a[href*="http://pub.ne.jp/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fpub.ne.jp%2F");
+}
+
+/* OCN Blogzine ブログ人
+ * http://blogzine.jp/
+ * http://blogzine.jp/favicon.ico
+ */
+#hatena-antenna-simple a[href*=".blogzine.jp/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fblogzine.jp%2F");
+}
+
+/* エムブロ！
+ * http://mblg.tv/
+ * http://mblg.tv/favicon.ico
+ */
+#hatena-antenna-simple a[href*="http://mblg.tv/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fmblg.tv%2F");
+}
+
+/* ハモブロ｜無料ブログを簡単作成
+ * http://hamoblo.com/
+ * http://hamoblo.com/favicon.ico
+ */
+#hatena-antenna-simple a[href*="http://hamoblo.com/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fhamoblo.com%2F");
+}
+
+/* Pixiv
+ * http://www.pixiv.net/
+ * http://www.pixiv.net/favicon.ico
+ */
+#hatena-antenna-simple a[href*="http://www.pixiv.net/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fwww.pixiv.net%2F");
+}
+
+/* 小説家になろう
+ * http://syosetu.com/
+ * http://syosetu.com/favicon.ico
+ */
+#hatena-antenna-simple a[href*="syosetu.com/"]::before {
+/*  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fsyosetu.com%2F"); */
+  content: url("http://cdn-ak.f.st-hatena.com/images/fotolife/m/mhrs/20111128/20111128185939.png");
+}
+
+/* SourceForge.JP
+ * http://sourceforge.jp/
+ * http://sourceforge.jp/favicon.ico
+ */
+#hatena-antenna-simple a[href*="sourceforge.jp/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fsourceforge.jp%2F");
+}
+
+/* Mac HomePage
+ * http://homepage.mac.com/
+ * http://homepage.mac.com/favicon.ico
+ */
+#hatena-antenna-simple a[href*="http://homepage.mac.com/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fhomepage.mac.com%2F");
+}
+
+/* 闇黒日記
+ * http://members.jcom.home.ne.jp/w3c/omake/diary.html
+ * http://members.jcom.home.ne.jp/w3c/omake/favicon.ico
+ */
+#hatena-antenna-simple a[href*="http://members.jcom.home.ne.jp/w3c/omake/diary.html"]::before {
+  content: url("http://cdn-ak.f.st-hatena.com/images/fotolife/m/mhrs/20111128/20111128185940.png");
+}
+
+/* "エロス断想"
+ * http://d.hatena.ne.jp/sanshu_seiso/
+ * http://d.hatena.ne.jp/images/diary/sanshu_seiso/favicon.ico
+ */
+#hatena-antenna-simple a[href*="http://d.hatena.ne.jp/sanshu_seiso/"]::before {
+  content: url("http://d.hatena.ne.jp/images/diary/sanshu_seiso/favicon.ico");
+}
+
+/* DKCCの広場
+ * http://purl.com/net/dkcc/
+ * http://www.oct.zaq.ne.jp/dkcc/
+ */
+#hatena-antenna-simple a[href*="http://purl"][href*="com/net/dkcc/"]::before,
+#hatena-antenna-simple a[href*="http://www.oct.zaq.ne.jp/dkcc/"]::before {
+  content: url("http://cdn-ak.f.st-hatena.com/images/fotolife/m/mhrs/20111128/20111128185938.png");
+}
+
+/* Pyon's Diary
+ * http://www.pyon.net/diary/
+ * www.pyon.net/diary/favicon.ico
+ */
+#hatena-antenna-simple a[href*="http://www.pyon.net/diary/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fwww.pyon.net/diary%2F");
+}
+
+/* 穴拔け日記
+ * http://www.hiemalis.org/~acy/diary/latest.html
+ * http://www.hiemalis.org/~acy/image/icon.png
+ */
+#hatena-antenna-simple a[href^="http://a.st-hatena.com/go?http://www.hiemalis.org/~acy/"]::before,
+#hatena-antenna-simple a[href^="http://www.hiemalis.org/~acy/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fwww.hiemalis.org/~acy%2F");
+}
+
+/* 紙捻
+ * http://koyori.org/
+ * http://koyori.org/icon/favicon.ico
+ */
+#hatena-antenna-simple a[href*="http://koyori.org/"]::before {
+/*  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fkoyori.org%2F"); */
+  content: url("http://cdn-ak.f.st-hatena.com/images/fotolife/m/mhrs/20111128/20111128181653.png");
+}
+
+/* はなごよみ
+ * http://kan-chan.stbbs.net/favicon.ico
+ */
+#hatena-antenna-simple a[href*="http://kan-chan.stbbs.net/"]::before,
+#hatena-antenna-simple a[href*="http://osito.hatenablog.jp/"]::before {
+/*  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fkan-chan.stbbs.net%2F"); */
+  content: url("http://cdn-ak.f.st-hatena.com/images/fotolife/m/mhrs/20111128/20111128182437.png");
+}
+
+/* the view from nowhere
+ * http://snob.s1.xrea.com/l/
+ * http://snob.s1.xrea.com/favicon.ico
+ */
+#hatena-antenna-simple a[href*="http://snob.s1.xrea.com/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fsnob.s1.xrea.com%2F");
+}
+
+/* Tolle et Lege Diary
+ * http://nakano.no-ip.org/lege/diary-top.php
+ * http://nakano.no-ip.org/lege/favicon.ico
+ */
+#hatena-antenna-simple a[href*="http://nakano.no-ip.org/lege/diary-top.php"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fnakano.no-ip.org/lege/diary-top.php");
+}
+
+/* 女性専用車両を頑なに利用しない埼京線の女性客の姿に「痴漢は単なる都市伝説なんだなあ」と日々痛感する綠犀淨庵鬱日記
+ * http://d.hatena.ne.jp/ryokusai/
+ * http://d.hatena.ne.jp/images/diary/ryokusai/favicon.ico
+ */
+#hatena-antenna-simple a[href*="http://d.hatena.ne.jp/ryokusai/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fd.hatena.ne.jp/ryokusai%2F");
+}
+
+/* 月夜丘 ～つくよのをか～
+ * http://llluna.s1.hayasoft.com/
+ * http://llluna.s1.hayasoft.com/favicon.ico
+ */
+#hatena-antenna-simple a[href*="http://llluna.s1.hayasoft.com/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fllluna.s1.hayasoft.com%2F");
+}
+
+/* 神社新報社
+ * http://www.jinja.co.jp/
+ * http://www.jinja.co.jp/favicon.ico
+ */
+#hatena-antenna-simple a[href*="http://www.jinja.co.jp/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fwww.jinja.co.jp%2F");
+}
+
+/* 樂しい日記 最近の日記
+ * http://www.softark.net/diary/
+ * http://www.softark.net/favicon.ico
+ */
+#hatena-antenna-simple a[href*="http://www.softark.net/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fwww.softark.net%2F");
+}
+
+/* きままに!
+ * http://rejec.net/~staryoshi/
+ */
+#hatena-antenna-simple a[href*="http://rejec.net/~staryoshi/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Frejec.net/~staryoshi%2F");
+}
+
+/* くさなぎ君の兄
+ * http://ksng.way-nifty.com/
+ * http://ksng.way-nifty.com/favicon.ico
+ */
+#hatena-antenna-simple a[href*="http://ksng.way-nifty.com/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fksng.way-nifty.com%2F");
+}
+
+/* アマチュア無線局 JN1PEI
+ * http://homepage3.nifty.com/kusanagi/jn1pei/
+ * http://homepage3.nifty.com/kusanagi/jn1pei/favicon.png
+ */
+#hatena-antenna-simple a[href*="http://homepage3.nifty.com/kusanagi/jn1pei/"]::before {
+/*  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fhomepage3.nifty.com/kusanagi/jn1pei%2F"); */
+  content: url("http://cdn-ak.f.st-hatena.com/images/fotolife/m/mhrs/20111128/20111128182803.png");
+}
+
+/* Ein Hoehle von Wachthai
+ * http://d.hatena.ne.jp/wachthai/
+ * http://d.hatena.ne.jp/images/diary/wachthai/favicon.ico
+ */
+#hatena-antenna-simple a[href*="http://d.hatena.ne.jp/wachthai/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fd.hatena.ne.jp/wachthai%2F");
+}
+
+/* 枝葉末説@ことのはぐるま
+ * http://d.hatena.ne.jp/nitchimo/
+ * http://www.hatena.ne.jp/users/ni/nitchimo/profile_s.gif
+ */
+#hatena-antenna-simple a[href*="http://d.hatena.ne.jp/nitchimo/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fd.hatena.ne.jp%2Fnitchimo%2F");
+}
+
+/* tad's Website - tadの庵
+ * http://greengablez.net/
+ * http://greengablez.net/favicon.ico
+ */
+#hatena-antenna-simple a[href*="http://greengablez.net/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fgreengablez.net%2F");
+}
+
+/* Dreamscape - capriccio -
+ * http://capriccio.s101.xrea.com/
+ * http://capriccio.s101.xrea.com/favicon.ico
+ */
+#hatena-antenna-simple a[href*="http://capriccio.s101.xrea.com/"]::before {
+/*  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fcapriccio.s101.xrea.com%2F"); */
+  content: url("http://cdn-ak.f.st-hatena.com/images/fotolife/m/mhrs/20111128/20111128185936.png");
+}
+
+/* 元店主の日記 | 京都カフェ・オパール
+ * http://www.cafeopal.com/diary/index.php
+ * http://www.cafeopal.com/favicon.ico
+ */
+#hatena-antenna-simple a[href*="http://www.cafeopal.com/"]::before {
+  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fwww.cafeopal.com%2F");
+}
+
+/* 岡田希雄を入力するはてダ
+ * http://d.hatena.ne.jp/Okdky/
+ * http://d.hatena.ne.jp/images/diary/Okdky/favicon.ico
+ */
+#hatena-antenna-simple a[href*="http://d.hatena.ne.jp/Okdky/"]::before {
+/*  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fd.hatena.ne.jp%2FOkdky%2F"); */
+  content: url("http://d.hatena.ne.jp/images/diary/Okdky/favicon.ico");
+}
+
+/* 黒猫亭
+ * http://chat--noir.com/j/
+ * http://chat--noir.com/images/favicon.ico
+ */
+#hatena-antenna-simple a[href*="http://chat--noir.com/"]::before {
+/*  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2F/chat--noir.com%2F"); */
+  content: url("http://cdn-ak.f.st-hatena.com/images/fotolife/m/mhrs/20111128/20111128185937.png");
+}
+
+/* kamizaki.jp
+ * http://kamizaki.jp/
+ * http://kamizaki.jp/favicon.ico
+ */
+#hatena-antenna-simple a[href*="http://kamizaki.jp/"]::before {
+/*  content: url("http://cdn-ak.favicon.st-hatena.com/?url=http%3A%2F%2Fkamizaki.jp%2F"); */
+  content: url("http://cdn-ak.f.st-hatena.com/images/fotolife/m/mhrs/20111128/20111128190022.png");
+}
+
+/* faviconを表示しない。
+*/
+#hatena-antenna-simple ol:not([start]) a[href]::before,
+#hatena-antenna-simple .header a[href]::before,
+#hatena-antenna-simple .footer a[href]::before,
+#pager_group a[href]::before {
+  display: none;
+  content: none;
+}
+
+/* :::: Document Footer ::::: */
+
+.document-footer h2.omake /* おまけ */,
+.document-footer h2.contact /* 聯絡先 */ {
+   display: none;
+}
+
+address {
+  text-align: right;
+  margin: 0;
+  padding: 0 0.8em 0 0;
+}
+
+h2.powered-by {
+  font-size: 100%;
+  text-align: center;
+  color: gray;
+  border-width: thin;
+  border-color: gray;
+  border-style: dotted none none none;
+  margin: .5em 0 0 0;
+  padding: .5em 0 0 0;
+}
+
+/* はてなが插入するフッタ */
+#footer {
+  margin: 0 0 .5em 0;
+  padding: 0;
+  text-align: center;
+  color: gray;
+  font-size: smaller;
+}
+
+/* hm-style-for-hatena-antenna.css ends hear. */
