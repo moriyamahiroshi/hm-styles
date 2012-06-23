@@ -1,10 +1,20 @@
-*HM styles -*- mode: outline; coding: utf-8 -*-
+* HM styles -*- mode: outline; coding: utf-8 -*-
 
 ** About
 
-CSSのスタイルシートファイル。いまのところはてなダイアリー用とはてなアンテ
-ナ用のみ。<http://d.hatena.ne.jp/mhrs/> と <http://a.hatena.ne.jp/mhrs/>
-でそれぞれ使用してゐる。
+森山ひろし(Hiroshi MORIYAMA -> "HM")が書いたCSSのファイル。いまのところ
+「はてな」向けの物のみ。
+
+** Application Examples
+
+hm-style-for-hatena-diary.css:
+    "HM weblog" <http://d.hatena.ne.jp/mhrs/>
+
+hm-style-for-hatena-group-diary.css:
+    "HM python - pythonグループ" <http://python.g.hatena.ne.jp/mhrs/>
+
+hm-style-for-hatena-antenna.css:
+    "はてなアンテナ - 正かなづかひアンテナ" <http://a.hatena.ne.jp/mhrs/>
 
 ** TODO
 
@@ -13,7 +23,7 @@ CSSのスタイルシートファイル。いまのところはてなダイア�
 
 ** COPYRIGHT
 
-© 2009 MORIYAMA Hiroshi
+© 2006 MORIYAMA Hiroshi
 
 ** LICENSE
 
@@ -21,4 +31,4 @@ The MIT license.
 
 ** AUTHOR
 
-MORIYAMA Hiroshi (Twitter ID: @moriyama164) <hiroshi@kvd.biglobe.ne.jp>
+MORIYAMA Hiroshi (@moriyama164) <hiroshi@kvd.biglobe.ne.jp>
