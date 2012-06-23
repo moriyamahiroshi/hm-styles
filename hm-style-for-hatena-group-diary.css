@@ -1,0 +1,901 @@
+@charset "UTF-8";
+/* HM style for Hatena::Group
+ *
+ * "HM python - pythonグループ" <http://python.g.hatena.ne.jp/mhrs/> に適
+ *  用してゐるスタイルシート。
+ *
+ * Author: MORIYAMA Hiroshi <hiroshi@kvd.biglobe.ne.jp>
+ *
+ * Copyright (c) 2006 MORIYAMA Hiroshi
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+a, abbr, acronym, address, big, blockquote, body, br, button, cite,
+code, dd, del, dfn, dir, div, dl, dt, em, fieldset, font, form, h1,
+h2, h3, h4, h5, h6, hr, html, i, img, input, ins, kbd, label,
+legend, li, object, ol, optgroup, option, p, pre, q, s, samp,
+select, small, span, strong, style, sub, sup, textarea, u, ul, var {
+    background-attachment: scroll;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    letter-spacing: 0;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    text-decoration: inherit;
+}
+
+caption, col, colgroup, table, tbody, td, tfoot, th, thead, tr {
+}
+
+address, body, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5,
+h6, hr, html, legend, ol, p, ul {
+    display: block;
+}
+
+a, abbr, acronym, code, del, dfn, img, ins, kbd, samp, span, var {
+    display: inline;
+}
+
+body {
+    background-color: #FDFDFD;
+    color: #000000;
+    font-size: 100%;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.6;
+    text-decoration: none;
+    padding: 0 0.5em 2em;
+}
+
+/* ::::: paragraph ::::: */
+
+p {
+    margin: 1em 0.5em;
+}
+
+li p,
+dd p {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+dd p:first-child {
+    margin-top: 0;
+}
+
+/* ::::: list ::::: */
+
+ul, ol {
+    margin: 1em 0.5em;
+    margin-left: 3.5em;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+ol {
+    list-style-type: cjk-ideographic;
+}
+
+dl {
+    margin: 1em 0.5em;
+    margin-left: 1em;
+}
+
+ul ul, ul ol, ul dl,
+ol ul, ol ol, ol dl,
+dl ul, dl ol, dl dl {
+    margin: 0;
+    margin-left: 2.5em;
+}
+
+li {
+    display: list-item;
+    margin-bottom: 0.2em;
+}
+
+li pre {
+    margin: 0;
+}
+
+dl dl {
+    margin-left: 0;
+}
+
+dt {
+    border-bottom: solid medium #E9EEFE;/*#E8ECF1;*/
+    line-height: 1.1;
+    padding-top: 0.2em;
+    padding-bottom: 0.5em;
+}
+
+dd dt {
+    border-bottom: none;
+}
+
+dd {
+    margin-left: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+/* ::::: blockquote ::::: */
+
+blockquote {
+    background-color: transparent;
+    color: inherit;
+    border-left: solid thick #8AB6F8;
+    margin: 1em 2em 1em 2.5em;
+    padding-left: 0.5em;
+}
+
+blockquote blockquote {
+    border-left: solid thick #D0E4FC;
+    margin-left: 0.5em;
+}
+
+blockquote p {
+    margin-left: 0;
+}
+
+blockquote pre {
+    margin: 0;
+}
+
+/* ::::: headdings ::::: */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+h1 {
+    text-align: right;
+  font-weight: normal;
+}
+
+h1:before {
+    display: none;
+}
+
+h2 {
+    margin-top: 5em ! important;
+}
+
+h2:before {
+    display: inline;
+    content: "□";
+    margin-right: 0.5em;
+}
+h2:before {
+    display: none;
+}
+
+div.calendar + div h2 {
+    margin-top: 0 ! important;
+}
+
+h3 {
+    border-bottom: medium solid;
+}
+
+h4 {
+    margin-top: 0.7em;
+}
+
+h4:before {
+    display: inline;
+    content: "▼";
+    margin-right: 0.5em;
+}
+
+h5 {
+}
+
+h5:before {
+    display: inline;
+    content: "▼▲";
+    margin-right: 0.5em;
+}
+
+h6 {
+}
+
+h6:before {
+    display: inline;
+    content: "▼▲▼";
+    margin-right: 0.5em;
+}
+
+/* ::::: preformated text ::::: */
+
+pre {
+    background-color: #FDFDFF;
+    border: thin solid #AFAFFF;
+    font-family: monospace;
+    line-height: 1.2;
+    margin: 1em 1.5em;
+    padding: 0.5em 0.4em;
+    width: auto;
+}
+
+pre code,
+pre samp,
+pre kbd {
+    margin: 0;
+}
+
+pre ins {
+    text-decoration: none;
+    border-bottom: none;
+}
+
+/* ::::: horizontal rule ::::: */
+
+hr {
+        border-style: solid none none none;
+    border-width: thin;
+    margin: 0.5em 1em;
+    height: 0.2em;
+}
+
+/* ::::: address ::::: */
+
+address {
+    font-style: italic;
+}
+
+/* ::::: ヘッダテーブル ::::: */
+
+table {
+    width: auto;
+    margin: 0 0 0 auto;
+}
+
+table,
+tr,
+th,
+td {
+    width: auto;
+    background-color: transparent;
+    color: inherit;
+}
+
+table td a {
+    margin: 0 0.25em;
+}
+
+/* ヘッダ内の檢索フォーム */
+table[border] form {
+    padding: 0.1em 0;
+}
+
+/* ::::: inline elements ::::: */
+
+a:link {
+    color: blue;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #a52a2a;
+    text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+    background-color: #F1F6FA;
+    text-decoration: underline;
+}
+
+a:active {
+    color: red;
+    text-decoration: underline;
+}
+
+q {
+    color: #075;
+    background-color: transparent;
+}
+
+q {
+    quotes: "「" "」";
+}
+
+q     q {
+    quotes: "『" "』";
+}
+
+q:before {
+    content: open-quote;
+}
+
+q:after {
+    content: close-quote;
+}
+
+cite:before {
+    display: inline;
+    content: "『";
+}
+
+cite:after {
+    display: inline;
+    content: "』";
+}
+
+abbr[title],
+acronym[title],
+kbd[title],
+var[title],
+code[title],
+samp[title],
+span[title] {
+    border-bottom: thin dotted #9F9FFF;
+    cursor: default;
+}
+
+a:link [title] {
+    cursor: pointer;
+}
+
+ins {
+    text-decoration: none;
+    border-bottom: 1px solid #B3B3B3; /* delの前景色と同じ色 */
+    padding-bottom: 1px;
+}
+
+del {
+    color: #B3B3B3; /* insの下線と同じ色 */
+    text-decoration: line-through;
+}
+
+ins * {
+}
+
+del * {
+}
+
+em, strong {
+}
+
+em {
+    font-weight: bold;
+    font-family: sans-serif;
+    border-bottom: thin solid;
+    padding-bottom: 0.05em;
+}
+
+strong {
+    color: #E22;
+    font-weight: bold;
+    font-family: sans-serif;
+    border-bottom: medium double;
+}
+
+del em,
+del strong {
+    color: inherit;
+}
+
+code,
+samp,
+kbd {
+    font-family: monospace;
+}
+
+code:before,
+samp:before,
+kbd:before,
+code:after,
+samp:after,
+kbd:after {
+    display: inline;
+    content: " ";
+}
+
+pre code:before,
+pre samp:before,
+pre kbd:before,
+pre code:after,
+pre samp:after,
+pre kbd:after {
+    display: none;
+    content: "";
+}
+
+var {
+    font-style: oblique;
+}
+
+dfn {
+    font-style: oblique;
+}
+
+kbd {
+    border-width: thin;
+    border-style: outset;
+    padding: 0 0.25em;
+    white-space: nowrap;
+}
+
+pre kbd {
+    white-space: pre;
+}
+
+small {
+    font-size: small;
+}
+
+big {
+    font-size: large;
+}
+
+/* ::::: form ::::: */
+
+input,
+textarea {
+    background-color: white;
+    color: #333;
+    border: thin solid;
+    padding: 0.1em;
+}
+
+input[type="submit"],
+input[type="button"],
+button {
+    background-color: #efefef;
+}
+
+textarea,
+button,
+input,
+label {
+    display: inline;
+}
+
+optgroup,
+option,
+select {
+    background-color: #FFFFFF;
+    color: #000000;
+    display: block;
+    height: auto;
+    width: auto;
+}
+
+input[type="hidden"] {
+    display: none;
+}
+
+fieldset {
+    border: thin groove;
+    padding: 1%;
+    margin: 0.8em 1em;
+}
+
+fieldset p {
+    font-size: 95%;
+    margin: .5em 1%;
+}
+
+legend {
+}
+
+label {
+    cursor: default;
+}
+
+button,
+input {
+    font-size: 80%;
+    padding: 2px;
+    vertical-align: middle;
+}
+
+textarea {
+    height: 16em;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    padding: 2px;
+    white-space: normal;
+    width: 100%;
+}
+
+input[type="text"],
+input[type="word"],
+input[type="password"],
+select,
+textarea {
+    background-color: white;
+    color: black;
+    font-size: 100%;
+    border-style: solid;
+    border-color: ThreeDShadow ThreeDLightShadow ThreeDLightShadow ThreeDShadow;
+    border-width: 2px 1px 1px 2px;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    background-color: ButtonFace;
+    border-style: solid;
+    border-color: ThreeDLightShadow ThreeDShadow ThreeDShadow ThreeDLightShadow;
+    border-width: 1px 2px 2px 1px;
+    color: ButtonText;
+}
+
+button:active:hover,
+input[type="button"]:active:hover,
+input[type="reset"]:active:hover,
+input[type="submit"]:active:hover {
+    border-color: ThreeDShadow ThreeDLightShadow ThreeDLightShadow ThreeDShadow;
+    border-width: 2px 1px 1px 2px;
+}
+
+button[disabled],
+input[type="button"][disabled],
+input[type="reset"][disabled],
+input[type="submit"][disabled] {
+    border-color: ThreeDLightShadow ThreeDShadow ThreeDShadow ThreeDLightShadow;
+    border-width: 2px 2px 2px 2px;
+    color: GrayText;
+}
+
+button[disabled]:active:hover,
+input[type="button"][disabled]:active:hover,
+input[type="reset"][disabled]:active:hover,
+input[type="submit"][disabled]:active:hover {
+    border-color: ThreeDLightShadow ThreeDShadow ThreeDShadow ThreeDLightShadow;
+    border-width: 2px 2px 2px 2px;
+    color: GrayText;
+}
+
+optgroup,
+option {
+    background-color: Menu;
+    color: MenuText;
+}
+
+option {
+    width: 100%;
+    margin-right: 0.5em;
+}
+
+optgroup {
+    font-style: italic;
+    font-weight: bold;
+}
+
+optgroup option {
+    font-style: normal;
+    padding-left: 1.2em;
+}
+
+/* ::::: font-lock-faces ::::: */
+
+.comment {
+    /* font-lock-comment-face */
+    color: #b22222;
+}
+
+.constant {
+    /* font-lock-constant-face */
+    color: #5f9ea0;
+}
+
+.keyword {
+    /* font-lock-keyword-face */
+    color: #a020f0;
+}
+
+.string {
+    /* font-lock-string-face */
+    color: #bc8f8f;
+}
+
+.variable-name {
+    /* font-lock-variable-name-face */
+    color: #b8860b;
+}
+
+.warning {
+    /* font-lock-warning-face */
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.paren {
+    color: #88AAFF;
+}
+
+.brace-face {
+    color: #FFAA88;
+}
+
+.bracket-face {
+    color: #AAAA00;
+}
+
+/* ::::: 特定記事專用スタイル ::::: */
+
+/* &lt;a href="&lt;a href="&lt;a href="&lt;a href="http://d.hatena.ne.jp/mhrs/20050813"&gt;http://d.hatena.ne.jp/mhrs/20050813&lt;/a&gt;"&gt;&lt;a href="http://d.hatena.ne.jp/mhrs/20050813&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/20050813&lt;/a&gt;&lt;/a&gt;"&gt;&lt;a href="&lt;a href="http://d.hatena.ne.jp/mhrs/20050813&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/20050813&lt;/a&gt;&lt;/a&gt;"&gt;&lt;a href="http://d.hatena.ne.jp/mhrs/20050813&lt;/a&gt;&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/20050813&lt;/a&gt;&lt;/a&gt;&lt;/a&gt;"&gt;&lt;a href="&lt;a href="&lt;a href="http://d.hatena.ne.jp/mhrs/20050813&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/20050813&lt;/a&gt;&lt;/a&gt;"&gt;&lt;a href="http://d.hatena.ne.jp/mhrs/20050813&lt;/a&gt;&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/20050813&lt;/a&gt;&lt;/a&gt;&lt;/a&gt;"&gt;&lt;a href="&lt;a href="http://d.hatena.ne.jp/mhrs/20050813&lt;/a&gt;&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/20050813&lt;/a&gt;&lt;/a&gt;&lt;/a&gt;"&gt;&lt;a href="http://d.hatena.ne.jp/mhrs/20050813&lt;/a&gt;&lt;/a&gt;&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/20050813&lt;/a&gt;&lt;/a&gt;&lt;/a&gt;&lt;/a&gt; */
+.SAGASE {
+    line-height: 1;
+    font-family: monospace;
+}
+
+/* &lt;a href="&lt;a href="&lt;a href="&lt;a href="http://d.hatena.ne.jp/mhrs/20050211/p1"&gt;http://d.hatena.ne.jp/mhrs/20050211/p1&lt;/a&gt;"&gt;&lt;a href="http://d.hatena.ne.jp/mhrs/20050211/p1&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/20050211/p1&lt;/a&gt;&lt;/a&gt;"&gt;&lt;a href="&lt;a href="http://d.hatena.ne.jp/mhrs/20050211/p1&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/20050211/p1&lt;/a&gt;&lt;/a&gt;"&gt;&lt;a href="http://d.hatena.ne.jp/mhrs/20050211/p1&lt;/a&gt;&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/20050211/p1&lt;/a&gt;&lt;/a&gt;&lt;/a&gt;"&gt;&lt;a href="&lt;a href="&lt;a href="http://d.hatena.ne.jp/mhrs/20050211/p1&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/20050211/p1&lt;/a&gt;&lt;/a&gt;"&gt;&lt;a href="http://d.hatena.ne.jp/mhrs/20050211/p1&lt;/a&gt;&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/20050211/p1&lt;/a&gt;&lt;/a&gt;&lt;/a&gt;"&gt;&lt;a href="&lt;a href="http://d.hatena.ne.jp/mhrs/20050211/p1&lt;/a&gt;&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/20050211/p1&lt;/a&gt;&lt;/a&gt;&lt;/a&gt;"&gt;&lt;a href="http://d.hatena.ne.jp/mhrs/20050211/p1&lt;/a&gt;&lt;/a&gt;&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/20050211/p1&lt;/a&gt;&lt;/a&gt;&lt;/a&gt;&lt;/a&gt; */
+dl.hatena-bookmarks {
+    line-height: 1.4;
+    border: none;
+    margin: 1em 0;
+    padding: 0 0 0 1em;
+    display: block;
+    list-style-type: disc;
+}
+
+dl.hatena-bookmarks dl,
+dl.hatena-bookmarks dt,
+dl.hatena-bookmarks dd {
+    border: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+dl.hatena-bookmarks dt.bookmark {
+    margin: 0;
+    margin-top: 1em;
+    display: list-item;
+}
+
+dl.hatena-bookmarks dd a {
+    color: #000;
+    text-decoration: underline;
+}
+
+dl.hatena-bookmarks dd dt {
+    margin-left: 0.5em;
+    display: inline;
+}
+
+dl.hatena-bookmarks dd dt:first-child {
+    margin-left: 0;
+}
+
+dl.hatena-bookmarks dd dt span,
+dl.hatena-bookmarks dd dd a span,
+dl.hatena-bookmarks dd dt.add-date {
+    display: none;
+}
+
+dl.hatena-bookmarks dd dd.add-date {
+    color: #999;
+    font-size: 80%;
+}
+
+dl.hatena-bookmarks dd {
+    margin: 0;
+    margin-left: 1em;
+}
+
+dl.hatena-bookmarks dd dd {
+    font-size: 96%;
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+dl.hatena-bookmarks img {
+    border: none;
+}
+
+/* ::::: Hatena Diary ::::: */
+
+/* 「&lt;前の5日分 次の5日分&gt;」 */
+div.calendar {
+    text-align: right;
+    font-size: 90%;
+}
+
+/* 「&lt;前の5日分 次の5日分&gt;」、「上」の物だけ非表示 */
+h1 + div.hatena-body div.calendar:first-child {
+/*    display: none;*/
+}
+
+/* 見出しの「■リンク」 */
+h3 a:link:first-child,
+h3 a:visited:first-child {
+    display: inline;
+    text-decoration: none;
+    margin-right: 0.3em;
+}
+
+h1 a:link,
+h2 a:link,
+h3 a:link,
+h4 a:link,
+h5 a:link,
+h6 a:link,
+h1 a:visited,
+h2 a:visited,
+h3 a:visited,
+h4 a:visited,
+h5 a:visited,
+h6 a:visited {
+    background-color: transparent;
+    color: inherit;
+    text-decoration: none;
+}
+
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+h1 a:visited:hover,
+h2 a:visited:hover,
+h3 a:visited:hover,
+h4 a:visited:hover,
+h5 a:visited:hover,
+h6 a:visited:hover {
+    color: #A52A2A;
+}
+
+/* 「引用元」 */
+blockquote cite,
+q cite {
+    display: none;
+}
+
+/* Parmalink | コメント(0) | トラックバック(0) */
+p.sectionfooter {
+    display: none;
+    border: none;
+    text-align: right;
+    font-size: 95%;
+}
+
+/* &lt;a href="&lt;a href="&lt;a href="&lt;a href="http://d.hatena.ne.jp/mhrs/keywordcloud"&gt;http://d.hatena.ne.jp/mhrs/keywordcloud&lt;/a&gt;"&gt;&lt;a href="http://d.hatena.ne.jp/mhrs/keywordcloud&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/keywordcloud&lt;/a&gt;&lt;/a&gt;"&gt;&lt;a href="&lt;a href="http://d.hatena.ne.jp/mhrs/keywordcloud&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/keywordcloud&lt;/a&gt;&lt;/a&gt;"&gt;&lt;a href="http://d.hatena.ne.jp/mhrs/keywordcloud&lt;/a&gt;&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/keywordcloud&lt;/a&gt;&lt;/a&gt;&lt;/a&gt;"&gt;&lt;a href="&lt;a href="&lt;a href="http://d.hatena.ne.jp/mhrs/keywordcloud&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/keywordcloud&lt;/a&gt;&lt;/a&gt;"&gt;&lt;a href="http://d.hatena.ne.jp/mhrs/keywordcloud&lt;/a&gt;&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/keywordcloud&lt;/a&gt;&lt;/a&gt;&lt;/a&gt;"&gt;&lt;a href="&lt;a href="http://d.hatena.ne.jp/mhrs/keywordcloud&lt;/a&gt;&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/keywordcloud&lt;/a&gt;&lt;/a&gt;&lt;/a&gt;"&gt;&lt;a href="http://d.hatena.ne.jp/mhrs/keywordcloud&lt;/a&gt;&lt;/a&gt;&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/keywordcloud&lt;/a&gt;&lt;/a&gt;&lt;/a&gt;&lt;/a&gt; */
+ul.keywordcloud {
+    margin: 0;
+    padding: 0;
+}
+
+ul.keywordcloud li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+/* &lt;a href="&lt;a href="&lt;a href="&lt;a href="http://d.hatena.ne.jp/mhrs/archive"&gt;http://d.hatena.ne.jp/mhrs/archive&lt;/a&gt;"&gt;&lt;a href="http://d.hatena.ne.jp/mhrs/archive&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/archive&lt;/a&gt;&lt;/a&gt;"&gt;&lt;a href="&lt;a href="http://d.hatena.ne.jp/mhrs/archive&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/archive&lt;/a&gt;&lt;/a&gt;"&gt;&lt;a href="http://d.hatena.ne.jp/mhrs/archive&lt;/a&gt;&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/archive&lt;/a&gt;&lt;/a&gt;&lt;/a&gt;"&gt;&lt;a href="&lt;a href="&lt;a href="http://d.hatena.ne.jp/mhrs/archive&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/archive&lt;/a&gt;&lt;/a&gt;"&gt;&lt;a href="http://d.hatena.ne.jp/mhrs/archive&lt;/a&gt;&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/archive&lt;/a&gt;&lt;/a&gt;&lt;/a&gt;"&gt;&lt;a href="&lt;a href="http://d.hatena.ne.jp/mhrs/archive&lt;/a&gt;&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/archive&lt;/a&gt;&lt;/a&gt;&lt;/a&gt;"&gt;&lt;a href="http://d.hatena.ne.jp/mhrs/archive&lt;/a&gt;&lt;/a&gt;&lt;/a&gt;"&gt;http://d.hatena.ne.jp/mhrs/archive&lt;/a&gt;&lt;/a&gt;&lt;/a&gt;&lt;/a&gt; */
+#hatena-archive h2 {
+    border-bottom: medium solid;
+}
+
+#hatena-archive h2 form input[type="text"] {
+    width: 20em;
+    font-weight: normal;
+}
+
+#hatena-archive .day + .calendar,
+#hatena-archive .day + .calendar + .calendar {
+    display: block;
+    padding: 0.25em 0.5em;
+}
+
+#hatena-archive .day + .calendar {
+    border-top: medium solid;
+}
+
+/* ::::: others ::::: */
+
+div.document-footer {
+    margin: 2em 0 0;
+    border-top: thin solid;
+}
+
+div.document-footer h2 {
+    display: none;
+}
+
+div.document-footer ul {
+    margin-left: 1.3em;
+    margin-right: 1.3em;
+    padding: 0;
+}
+
+div.document-footer li {
+    margin: 0;
+    padding: 0;
+}
+
+.verbose,
+.varbose /*綴り間違ひ*/ {
+    display: none;
+}
+
+/* ブックマークレット */
+dd.bookmarklet {
+    white-space: pre;
+    overflow: auto;
+}
+
+/* 顔文字の畫像 */
+img.facemark {
+    vertical-align: bottom;
+}
+
+/*
+blockquote cite {
+  display: block;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+*/
+
+/* 擬似ルビ・ふりがな */
+span[class="ruby"][title]:after /* ←之は廃止豫定 */  ,
+span[class="ruby"] span[class="rb"][title]:after {
+    display: inline;
+    content: "(" attr(title) ")";
+    font-size: 80%;
+}
+
+h1 span[class="ruby"][title]:after,
+h2 span[class="ruby"][title]:after,
+h3 span[class="ruby"][title]:after {
+    font-size: 55%;
+}
+
+.refererlist {
+  line-height: 1.1;
+}
+
+/* 設定ページ用 */
+form p {
+  margin: 0;
+}
+
+/* */
+samp {
+   background-color: #ddffff;
+}
+kbd {
+   background-color: #ffeebb;
+}
+
+/* HM style for Hatena::Group ends here. */
