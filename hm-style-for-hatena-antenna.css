@@ -69,6 +69,14 @@ h2:first-child {
   margin-top: 0.5em;
 }
 
+h1 + p {
+  margin: 0 1%;
+}
+
+h1 + p.message {
+  font-size: 85%;
+}
+
 ol {
   margin: 1em 0;
 }
