@@ -1,0 +1,8 @@
+@namespace url("http://www.w3.org/1999/xhtml");
+
+#doc #page-outer > #page-container.wrapper-permalink > div {
+  position: relative ! important;
+  top: 325px ! important;
+  opacity: 0.9393;
+}
+
