@@ -1,7 +1,7 @@
 @charset "UTF-8"; /* hm-style-for-hatena-diary.css */
-/* HM style for Hatena::Diary <d.hatena.ne.jp>
+/* HM style for Hatena::Diary (d.hatena.ne.jp)
  *
- * Author: MORIYAMA Hiroshi <hiroshi@kvd.biglobe.ne.jp>
+ * Author: hiroshi@kvd.biglobe.ne.jp (MORIYAMA Hiroshi)
  *
  * Copyright (c) 2009 MORIYAMA Hiroshi
  *
@@ -30,10 +30,10 @@
  *
  * はてなダイアリーで使用するため次の制限がある。
  *
- *   - 子セレクタ ">" を使へない。
+ *   - 子セレクタを使へない。
  *
- *   - "purl" と書くとその行の内容が壊れるので PURL <http://purl.org/>
- *     は使用できない。<:http://i.hatena.ne.jp/idea/30759> を參照。
+ *   - "purl" と書くとその行の内容が壊れるので "PURL" http://purl.org/ は
+ *     使用できない。http://i.hatena.ne.jp/idea/30759 を參照。
  *
  *   - はてなダイアリーで使用するときはEUC-JPに變換すること。尚はてなグルー
  *     プはUTF-8。
@@ -614,7 +614,7 @@ html, body {
   width: 12em ! important;
 }
 
-/* "この日記について" <URL:http://d.hatena.ne.jp/mhrs/about> */
+/* "この日記について" http://d.hatena.ne.jp/mhrs/about */
 #hatena-about h2 span.title::before {
 /*
   display: inline;
@@ -622,7 +622,7 @@ html, body {
 */
 }
 
-/* "記事一覧" <URL:http://d.hatena.ne.jp/mhrs/archive> */
+/* "記事一覧" http://d.hatena.ne.jp/mhrs/archive */
 #archive-calendar-top {
   display: none;
 }
@@ -867,7 +867,7 @@ span.html,
 }
 
 /* 振假名。
- * 初出: "2011-10-02 - HM stream" <URL:http://d.hatena.ne.jp/mhrs/20111002>
+ * 初出: "2011-10-02 - HM stream" http://d.hatena.ne.jp/mhrs/20111002
  */
 .with-furigana[title]::after {
   content: "(" attr(title) ")";
