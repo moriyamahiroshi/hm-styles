@@ -684,6 +684,12 @@ dAAAAAElFTkSuQmCC");
   content: none;
 }
 
+/* :::: リンク切れ ::::: */
+
+a[href^="http://homepage.mac.com/"] {
+  text-decoration: line-through;
+}
+
 /* :::: Document Footer ::::: */
 
 .document-footer h2.omake /* おまけ */,
