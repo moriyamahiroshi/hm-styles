@@ -686,7 +686,8 @@ dAAAAAElFTkSuQmCC");
 
 /* :::: リンク切れ ::::: */
 
-a[href^="http://homepage.mac.com/"] {
+a[href^="http://homepage.mac.com/"],
+a[href="http://www3.tokai.or.jp/remembrance/diary/diary.html"] {
   text-decoration: line-through;
 }
 
