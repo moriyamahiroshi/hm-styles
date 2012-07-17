@@ -958,4 +958,12 @@ ins[title="脱字訂正"] {
   border: inherit;
 }
 
+/* Retweet style 2012-07-17. EXPERIMENTAL.
+ */
+li[title^="RT @"]::before {
+  display: inline;
+  content: attr(title) ": ";
+  color: gray;
+}
+
 /* hm-style-for-hatena-diary.css ends hear. */
