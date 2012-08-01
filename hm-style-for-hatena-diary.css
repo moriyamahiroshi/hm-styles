@@ -966,4 +966,12 @@ li[title^="RT @"]::before {
   color: gray;
 }
 
+/* はてなダイアリーの廣告表示用コンテナの min-height (廣告が表示されてゐ
+ * ないときも一定の高さを占有してゐる)を解除。
+ */
+#google_afc_user,
+#google_afc_user * {
+  min-height: 0 ! important;
+}
+
 /* hm-style-for-hatena-diary.css ends hear. */
